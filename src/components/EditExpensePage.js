@@ -25,7 +25,7 @@ export class EditExpensePage extends React.Component {
 
 const mapDispatchToProps = (dispatch, props) => ({
   editExpense: (id, expense) => dispatch(editExpense(id, expense)),
-  onRemove: id => dispatch(removeExpense(id))
+  removeExpense: data => dispatch(removeExpense(data))
 });
 
 const mapsStateToProps = (state, props) => ({
