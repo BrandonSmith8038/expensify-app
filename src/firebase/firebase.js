@@ -1,42 +1,39 @@
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyBec13gh7QVANj-fo9TZ1HmZ6jzhr2scWQ",
-    authDomain: "expensify-3b66b.firebaseapp.com",
-    databaseURL: "https://expensify-3b66b.firebaseio.com",
-    projectId: "expensify-3b66b",
-    storageBucket: "expensify-3b66b.appspot.com",
-    messagingSenderId: "880548909958"
-  };
-  firebase.initializeApp(config);
+  apiKey: 'AIzaSyBec13gh7QVANj-fo9TZ1HmZ6jzhr2scWQ',
+  authDomain: 'expensify-3b66b.firebaseapp.com',
+  databaseURL: 'https://expensify-3b66b.firebaseio.com',
+  projectId: 'expensify-3b66b',
+  storageBucket: 'expensify-3b66b.appspot.com',
+  messagingSenderId: '880548909958'
+};
+firebase.initializeApp(config);
 
+const database = firebase.database();
 
-  const database = firebase.database()
+database.ref('expenses').push({
+  description: 'Rent',
+  note: 'Needs to be paid',
+  amount: 1234,
+  createdAt: 'November 30'
+});
 
+database.ref('expenses').push({
+  description: 'Cable',
+  note: 'Needs to be paid',
+  amount: 789,
+  createdAt: 'November 12th'
+});
 
+database.ref('expenses').push({
+  description: 'Water',
+  note: 'Paid',
+  amount: 456,
+  createdAt: 'November 1st'
+});
 
- database.ref('expenses').push({
-     description: 'Rent',
-     note: 'Needs to be paid',
-     amount: 1234,
-     createdAt: 'November 30'
- })
-
- database.ref('expenses').push({
-     description: 'Cable',
-     note: 'Needs to be paid',
-     amount: 789,
-     createdAt: 'November 12th'
- })
-
- database.ref('expenses').push({
-     description: 'Water',
-     note: 'Paid',
-     amount: 456,
-     createdAt: 'November 1st'
- })
-
-    /*const firebaseNotes = {
+/*const firebaseNotes = {
         notes: {
             fkdsfksa: {
                 title: 'This is my first note',
@@ -59,13 +56,12 @@ const config = {
         body: 'This is the body of the second note'
     }]*/
 
-    /*database.ref('notes').push({
+/*database.ref('notes').push({
         title: 'Second Note',
         body: 'Second Note Body'
     });*/
 
-
-    /*database.ref().on('value',(snapshot) => {
+/*database.ref().on('value',(snapshot) => {
         const name = snapshot.val().name
         const title = snapshot.val().job.title
         const company = snapshot.val().job.company
@@ -84,7 +80,6 @@ const config = {
     })
 
 */
-
 
 /*  database.ref().set({
       name: 'Brandon Smith',
@@ -129,5 +124,3 @@ database.ref().update({
     'job/company': 'Amazon',
     'location/city': 'San Fransico'
 })*/
-
-

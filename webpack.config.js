@@ -9,8 +9,8 @@ module.exports = env => {
 
   return {
     entry: [
-      'webpack-dev-server/client?https://0.0.0.0:8080',
-      'webpack/hot/only-dev-server',
+      /* 'webpack-dev-server/client?https://0.0.0.0:8080',
+      'webpack/hot/only-dev-server', */
       './src/app.js'
     ],
     output: {
@@ -50,19 +50,15 @@ module.exports = env => {
       stats: 'errors-only',
       overlay: {
         errors: true,
-        warnings: true,
-      },
+        warnings: true
+      }
 
-
-    disableHostCheck: true,
+      /* disableHostCheck: true,
         hot: true,
         host: process.env.IP,
         //https: true,
-        port: process.env.PORT,
-        "public": "udemy-complete-react-cowboy8038.c9users.io" //no trailing slash
-
+         port: process.env.PORT,
+        "public": "udemy-complete-react-cowboy8038.c9users.io" */ //no trailing slash
     }
-
-  }
-
-}
+  };
+};
