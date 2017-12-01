@@ -12,7 +12,56 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref('expenses').push({
+// child_removed
+database.ref('expenses').on('child_removed', snapshot => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+// child_changed
+database.ref('expenses').on('child_changed', snapshot => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+//child_added
+database.ref('expenses').on('child_added', snapshot => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+/* database.ref('expenses').on('value', snapshot => {
+  const expenses = [];
+
+  snapshot.forEach(childSnapshot => {
+    expenses.push({
+      id: childSnapshot.key,
+      ...childSnapshot.val()
+    });
+  });
+  console.log(expenses);
+}); */
+
+/* database
+  .ref('expenses')
+  .once('value')
+  .then(snapshot => {
+    const expenses = [];
+
+    snapshot.forEach(childSnapshot => {
+      expenses.push({
+        id: childSnapshot.key,
+        ...childSnapshot.val()
+      });
+    });
+    console.log(expenses);
+  }); */
+
+/* database
+  .ref('expenses')
+  .once('value')
+  .then(snapshot => {
+    console.log(snapshot.val());
+  }); */
+
+/* database.ref('expenses').push({
   description: 'Rent',
   note: 'Needs to be paid',
   amount: 1234,
@@ -31,7 +80,7 @@ database.ref('expenses').push({
   note: 'Paid',
   amount: 456,
   createdAt: 'November 1st'
-});
+}); */
 
 /*const firebaseNotes = {
         notes: {
