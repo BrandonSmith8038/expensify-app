@@ -9,8 +9,8 @@ module.exports = env => {
 
   return {
     entry: [
-      // 'webpack-dev-server/client?https://0.0.0.0:8080',
-      // 'webpack/hot/only-dev-server',
+      'webpack-dev-server/client?https://0.0.0.0:8080',
+      'webpack/hot/only-dev-server',
       './src/app.js'
     ],
     output: {
@@ -48,13 +48,21 @@ module.exports = env => {
       historyApiFallback: true,
       publicPath: '/dist/',
       stats: 'errors-only',
-      overlay: { errors: true, warnings: true }
-    }
-  };
-  /* disableHostCheck: true,
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+
+
+    disableHostCheck: true,
         hot: true,
         host: process.env.IP,
         //https: true,
         port: process.env.PORT,
-        "public": "udemy-complete-react-cowboy8038.c9users.io" //no trailing slash */
-};
+        "public": "udemy-complete-react-cowboy8038.c9users.io" //no trailing slash
+
+    }
+
+  }
+
+}
