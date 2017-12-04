@@ -20,6 +20,7 @@ module.exports = env => {
     entry: [
       //'webpack-dev-server/client?https://0.0.0.0:8080',
       //'webpack/hot/only-dev-server',
+      'babel-polyfill',
       './src/app.js'
     ],
     output: {
