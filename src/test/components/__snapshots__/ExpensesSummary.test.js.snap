@@ -1,29 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render ExpensesSummary with plural expenses 1`] = `
-<div>
-  <h1>
-    Currently Viewing 
-    2
-     
-    expenses
-     totaling
-     
-    $53,254,523.45
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Currently Viewing 
+      <span>
+        2
+      </span>
+       
+      expenses
+       totaling
+       
+      <span>
+        $53,254,523.45
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        buttonTitle="Add"
+        className="button button--create"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Should render ExpensesSummary with singular expense 1`] = `
-<div>
-  <h1>
-    Currently Viewing 
-    1
-     
-    expense
-     totaling
-     
-    $2.35
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Currently Viewing 
+      <span>
+        1
+      </span>
+       
+      expense
+       totaling
+       
+      <span>
+        $2.35
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        buttonTitle="Add"
+        className="button button--create"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
